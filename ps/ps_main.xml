@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="ps_main" merge="join">
+		<sheetdata merge="join">
+			<label_ps name="abilitieslabel">
+				<anchored width="210" />
+			</label_ps>
+			<label_ps name="powlabel">
+				<anchored to="chalabel" position="righthigh" offset="8,0" width="25" />
+				<static textres="pow" />
+				<center />
+			</label_ps>
+			<label_ps name="horlabel">
+				<anchored to="powlabel" position="righthigh" offset="8,0" width="25" />
+				<static textres="hor" />
+				<center />
+			</label_ps>
+			<label_ps name="aclabel">
+				<anchored offset="60,0" />
+			</label_ps>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="ps_mainitem" merge="join">
+		<sheetdata merge="join">
+			<number_ps_ability name="power">
+				<anchored to="charisma" />
+			</number_ps_ability>		
+			<number_ps_ability name="horror">
+				<anchored to="power" />
+			</number_ps_ability>		
+			<number_ps_abilitybonus name="sanbonus">
+				<anchored to="power" />
+				<target>power</target>
+			</number_ps_abilitybonus>		
+			<number_ps_abilitybonus name="honbonus">
+				<anchored to="horror" />
+				<target>horror</target>
+			</number_ps_abilitybonus>	
+			
+			<number_ps_defense name="ac">
+				<anchored to="charisma">
+					<left offset="85" />
+				</anchored>
+			</number_ps_defense>			
+		</sheetdata>
+	</windowclass>
+</root>

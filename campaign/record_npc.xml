@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="npc" merge="join">
+		<placement>
+			<size width="600" height="550" />
+		</placement>
+		<sizelimits>
+			<minimum width="600" height="400" />
+			<dynamic />
+		</sizelimits>
+	</windowclass>
+	<windowclass name="npc_combat" merge="join">
+		<script file="campaign/scripts/npc_main.lua" />
+		<sheetdata merge="join">
+			<number_npc_abilityscore name="strength" source="abilities.strength.score">
+				<anchored merge="replace" width="40" height="30">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="12" />
+					<left anchor="left" offset="4" />
+				</anchored>
+				<target>strength</target>
+			</number_npc_abilityscore>
+			
+			<number_npc_abilityscore name="power" source="abilities.power.score">
+				<anchored merge="replace" to="strength" width="40" height="30">
+					<top />
+					<left anchor="right" relation="relative" offset="30" />
+				</anchored>
+				<target>power</target>
+			</number_npc_abilityscore>
+			<label_npc_abilityscore>
+				<anchored to="power" />
+				<static textres="POW" />
+			</label_npc_abilityscore>
+			<hn name="power_bonus" source="abilities.power.bonus" />
+			<string_npc_abilitymodtext name="power_modtext">
+				<anchored to="power" />
+			</string_npc_abilitymodtext>
+			<button_npcabilitycheck>
+				<anchored to="power" />
+				<target>power</target>
+			</button_npcabilitycheck>
+			<button_npcabilitysave>
+				<anchored to="power" />
+				<target>power</target>
+			</button_npcabilitysave>
+			
+			<number_npc_abilityscore name="horror" source="abilities.horror.score">
+				<anchored merge="replace" to="strength" width="40" height="30">
+					<top />
+					<left anchor="right" relation="relative" offset="30" />
+				</anchored>
+				<target>horror</target>
+			</number_npc_abilityscore>
+			<label_npc_abilityscore>
+				<anchored to="horror" />
+				<static textres="HOR" />
+			</label_npc_abilityscore>
+			<hn name="horror_bonus" source="abilities.horror.bonus" />
+			<string_npc_abilitymodtext name="horror_modtext">
+				<anchored to="horror" />
+			</string_npc_abilitymodtext>
+			<button_npcabilitycheck>
+				<anchored to="horror" />
+				<target>horror</target>
+			</button_npcabilitycheck>
+			<button_npcabilitysave>
+				<anchored to="horror" />
+				<target>horror</target>
+			</button_npcabilitysave>
+		</sheetdata>
+	</windowclass>
+</root>

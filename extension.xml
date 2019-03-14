@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root version="3.0" release="8" logo="logo.png">
+	<announcement text="5E Power and Horror for Fantasy Grounds\rModified by Dailies and Dungeons\rCopyright 2015 Smiteworks USA, LLC" font="emotefont" icon="DDlogo_5E" />
+
+	<!-- Attributes -->
+	<properties>
+		<name>5E Add-on - Sanity and Honor</name>
+		<version>1.0.0</version>
+		<description>Adds Power and Horror ability - 13 March 2019</description>
+		<loadorder>52</loadorder>
+		<ruleset>
+			<name>5E</name>
+		</ruleset>
+	</properties>
+
+	<base>
+	<!-- Layers -->
+	<importruleset source="CoreRPG" />
+	
+	<!-- Strings -->
+	<includefile source="strings/strings_5e.xml" />
+	
+	<!-- Campaign Records -->
+	<includefile source="campaign/record_char.xml" />
+	<includefile source="campaign/record_char_main.xml" />
+	<includefile source="campaign/record_npc.xml" />
+		
+	<!-- Party sheet -->
+	<includefile source="ps/ps_main.xml" />
+	<script name="PartyManager2" file="ps/scripts/manager_ps2.lua" />
+
+	<!-- High-level scripts -->
+	<script name="DataCommon" file="scripts/data_common.lua" />
+	<script name="DataSpell" file="scripts/data_spell.lua" />
+	<script name="ActorManager2" file="scripts/manager_actor2.lua" />
+	<script name="EffectManager5E" file="scripts/manager_effect_5E.lua" />
+	
+	<!-- icon -->
+	<icon name="DDlogo_5E" file="graphics/icons/DD_5E.png" />
+	
+	</base>
+</root>

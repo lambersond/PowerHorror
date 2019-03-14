@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_main" merge="join">
+		<sheetdata merge="join">
+			<number_charabilityscore name="power" source="abilities.power.score">
+				<target>power</target>
+			</number_charabilityscore>
+			<label_abilityscore>
+				<anchored to="power" />
+				<static textres="POW" />
+			</label_abilityscore>
+			<hn name="power_bonus" source="abilities.power.bonus" />
+			<string_abilitymodtext name="power_modtext">
+				<anchored to="power" />
+			</string_abilitymodtext>
+			<number_charabilityscore name="horror" source="abilities.horror.score">
+				<target>horror</target>
+			</number_charabilityscore>
+			<label_abilityscore>
+				<anchored to="horror" />
+				<static textres="HOR" />
+			</label_abilityscore>
+			<hn name="horror_bonus" source="abilities.horror.bonus" />
+			<string_abilitymodtext name="horror_modtext">
+				<anchored to="horror" />
+			</string_abilitymodtext>
+
+			<number_charabilitysave name="powersave" source="abilities.power.save">
+				<target>power</target>
+				<modifierfield>abilities.power.savemodifier</modifierfield>
+			</number_charabilitysave>
+			<button_saveprof name="powersaveprof" source="abilities.power.saveprof">
+				<anchored to="powersave" />
+			</button_saveprof>
+			<label_chardefense>
+				<anchored to="powersave" />
+				<static textres="POW" />
+			</label_chardefense>
+			<number_charabilitysave name="horrorsave" source="abilities.horror.save">
+				<target>horror</target>
+				<modifierfield>abilities.horror.savemodifier</modifierfield>
+			</number_charabilitysave>
+			<button_saveprof name="horrorsaveprof" source="abilities.horror.saveprof">
+				<anchored to="horrorsave" />
+			</button_saveprof>
+			<label_chardefense>
+				<anchored to="horrorsave" />
+				<static textres="HOR" />
+			</label_chardefense>
+		</sheetdata>
+	</windowclass>
+</root>
